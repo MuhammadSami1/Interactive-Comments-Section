@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "jotai": "^2.10.3",
     "jotai-scope": "^0.7.2",
     "next": "15.0.3",

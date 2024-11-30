@@ -12,3 +12,8 @@ export type ReplyCommentProps = {
   username?: string;
   image: string;
 };
+
+export type DeleteDialogProps = {
+  open: boolean;
+  setOpen: () => void;
+};
