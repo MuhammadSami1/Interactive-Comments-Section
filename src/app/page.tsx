@@ -1,9 +1,9 @@
-import Comment from "@/components/Comment";
+import AllComments from "@/components/AllComments";
 
 export default function Home() {
   return (
-    <div className="flex flex-col max-w-2xl mt-4 mx-auto">
-      <Comment />
+    <div>
+      <AllComments />
     </div>
   );
 }

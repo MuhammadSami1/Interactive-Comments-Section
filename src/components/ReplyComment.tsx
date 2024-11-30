@@ -1,13 +1,19 @@
 "use client";
 import Image from "next/image";
 import Counter from "./Counter";
-import { CommentProps } from "@/types/types";
+import { ReplyCommentProps } from "@/types/types";
 import { ScopeProvider } from "jotai-scope";
 import { count } from "@/atoms/atom";
 
-const Comment = ({ content, createdAt, username, image }: CommentProps) => {
+const ReplyComment = ({
+  content,
+  createdAt,
+  replyingTo,
+  username,
+  image,
+}: ReplyCommentProps) => {
   return (
-    <div className="flex  justify-between px-5 py-7 mb-4 bg-Neutral-White rounded-md max-w-2xl mx-auto font-rubik">
+    <div className="flex  justify-between px-5 py-7 mb-4 bg-Neutral-White rounded-md max-w-[600px] ml-auto font-rubik">
       <ScopeProvider atoms={[count]}>
         <Counter />
       </ScopeProvider>
@@ -42,11 +48,11 @@ const Comment = ({ content, createdAt, username, image }: CommentProps) => {
         </div>
 
         <p className="text-Neutral-GrayishBlue font-normal font-rubik mt-4">
-          {content}
+          {`@${replyingTo} ${content}`}
         </p>
       </div>
     </div>
   );
 };
 
-export default Comment;
+export default ReplyComment;
