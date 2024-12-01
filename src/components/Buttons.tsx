@@ -1,3 +1,4 @@
+"use client";
 import { dialogAtom } from "@/atoms/atom";
 import { useAtom } from "jotai";
 

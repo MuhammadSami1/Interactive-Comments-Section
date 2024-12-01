@@ -7,15 +7,30 @@ import UserComment from "./UserComment";
 import { useAtom } from "jotai";
 import { dialogAtom } from "@/atoms/atom";
 import DeleteDialog from "./Dialog";
+import useAddComment from "@/hooks/handleAddComment";
+import { useEffect, useState } from "react";
+import { CommentsData } from "@/types/addCommentTypes";
 
 const AllComments = () => {
   const [isOpen, setIsOpen] = useAtom(dialogAtom);
+  const [commentsData, setCommentsData] = useState<CommentsData>(data);
+  const addComment = useAddComment(commentsData, setCommentsData);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("commentsData");
+    if (storedData) {
+      setCommentsData(JSON.parse(storedData));
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("commentsData", JSON.stringify(commentsData));
+  }, [commentsData]);
+
   return (
     <div className="flex flex-col mt-4 max-w-2xl mx-auto pb-32">
       {data?.comments.map((items) => (
-        <>
+        <div key={items.id}>
           <Comment
-            key={items.id}
             content={items.content}
             createdAt={items.createdAt}
             username={items.user.username}
@@ -31,17 +46,24 @@ const AllComments = () => {
               image={value.user.image.webp}
             />
           ))}
-        </>
+        </div>
       ))}
-      <div className="mb-1">
-        <UserComment />
-        <UserComment />
-        <UserComment />
-        <UserComment />
+      <div className="mb-2">
+        {commentsData.comments
+          .filter((filterIds) => filterIds.id > 2)
+          .map((userComment) => (
+            <UserComment
+              key={userComment.id}
+              content={userComment.content}
+              createdAt={userComment.createdAt}
+              username={userComment.user.username}
+              image={userComment.user.image.webp}
+            />
+          ))}
       </div>
 
       <div className="fixed bottom-0 w-full z-10">
-        <AddComment />
+        <AddComment addComment={addComment} />
       </div>
       {isOpen && (
         <DeleteDialog open={isOpen} setOpen={() => setIsOpen(false)} />

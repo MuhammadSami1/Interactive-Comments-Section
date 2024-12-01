@@ -1,21 +1,9 @@
 "use client";
 import { count } from "@/atoms/atom";
 import { useAtom } from "jotai";
-// import { useEffect } from "react";
 
 const Counter = () => {
   const [number, setNumber] = useAtom(count);
-
-  // useEffect(() => {
-  //   const savedNumber = localStorage.getItem("counter");
-  //   if (savedNumber !== null) {
-  //     setNumber(parseInt(savedNumber, 10));
-  //   }
-  // }, [setNumber]);
-
-  // useEffect(() => {
-  //   localStorage.setItem("counter", number.toString());
-  // }, [number]);
 
   const increase = () => {
     setNumber((prep) => prep + 1);
