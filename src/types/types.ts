@@ -16,12 +16,14 @@ export type ReplyCommentProps = {
 export type DeleteDialogProps = {
   open: boolean;
   setOpen: () => void;
+  idDelete: () => void;
 };
 export type UserCommentProps = {
   content: string;
   createdAt: string;
   username: string;
   image: string;
+  id: number;
 };
 
 export type AddCommentProps = {

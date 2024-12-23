@@ -5,15 +5,14 @@ import data from "@/app/data/data.json";
 import ReplyComment from "./ReplyComment";
 import UserComment from "./UserComment";
 import { useAtom } from "jotai";
-import { dialogAtom } from "@/atoms/atom";
-import DeleteDialog from "./Dialog";
+import { dataAtom } from "@/atoms/atom";
+// import DeleteDialog from "./Dialog";
 import useAddComment from "@/hooks/handleAddComment";
-import { useEffect, useState } from "react";
-import { CommentsData } from "@/types/addCommentTypes";
+import { useEffect } from "react";
 
 const AllComments = () => {
-  const [isOpen, setIsOpen] = useAtom(dialogAtom);
-  const [commentsData, setCommentsData] = useState<CommentsData>(data);
+  // const [isOpen, setIsOpen] = useAtom(dialogAtom);
+  const [commentsData, setCommentsData] = useAtom(dataAtom);
   const addComment = useAddComment(commentsData, setCommentsData);
 
   useEffect(() => {
@@ -36,7 +35,7 @@ const AllComments = () => {
             username={items.user.username}
             image={items.user.image.webp}
           />
-          {items.replies.map((value) => (
+          {items.replies?.map((value) => (
             <ReplyComment
               key={value.id}
               content={value.content}
@@ -52,22 +51,22 @@ const AllComments = () => {
         {commentsData.comments
           .filter((filterIds) => filterIds.id > 2)
           .map((userComment) => (
-            <UserComment
-              key={userComment.id}
-              content={userComment.content}
-              createdAt={userComment.createdAt}
-              username={userComment.user.username}
-              image={userComment.user.image.webp}
-            />
+            <>
+              <UserComment
+                key={userComment.id}
+                content={userComment.content}
+                createdAt={userComment.createdAt}
+                username={userComment.user.username}
+                image={userComment.user.image.webp}
+                id={userComment.id}
+              />
+            </>
           ))}
       </div>
 
       <div className="fixed bottom-0 w-full z-10">
         <AddComment addComment={addComment} />
       </div>
-      {isOpen && (
-        <DeleteDialog open={isOpen} setOpen={() => setIsOpen(false)} />
-      )}
     </div>
   );
 };

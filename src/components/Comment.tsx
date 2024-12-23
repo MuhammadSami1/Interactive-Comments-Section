@@ -40,7 +40,7 @@ const Comment = ({ content, createdAt, username, image }: CommentProps) => {
           </div>
         </div>
 
-        <p className="text-Neutral-GrayishBlue font-normal font-rubik mt-4">
+        <p className="text-Neutral-GrayishBlue font-normal font-rubik mt-1">
           {content}
         </p>
       </div>

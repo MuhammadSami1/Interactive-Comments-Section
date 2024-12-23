@@ -6,7 +6,7 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 
-function DeleteDialog({ open, setOpen }: DeleteDialogProps) {
+function DeleteDialog({ open, setOpen, idDelete }: DeleteDialogProps) {
   return (
     <>
       <Dialog open={open} onClose={setOpen} className="relative z-50 ">
@@ -28,7 +28,7 @@ function DeleteDialog({ open, setOpen }: DeleteDialogProps) {
                 NO, CANCEL
               </button>
               <button
-                onClick={setOpen}
+                onClick={idDelete}
                 className="text-Neutral-VeryLightGray bg-Primary-SoftRed px-8 py-3 rounded-md"
               >
                 YES DELETE

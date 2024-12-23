@@ -10,6 +10,7 @@ const UserComment = ({
   createdAt,
   username,
   image,
+  id,
 }: UserCommentProps) => {
   return (
     <div className="flex px-5 py-7 mb-4 bg-Neutral-White rounded-md font-rubik">
@@ -35,10 +36,10 @@ const UserComment = ({
           </div>
           <span className="text-Neutral-GrayishBlue">{createdAt}</span>
 
-          <Buttons />
+          <Buttons id={id} />
         </div>
 
-        <p className="text-Neutral-GrayishBlue font-normal font-rubik mt-4">
+        <p className="text-Neutral-GrayishBlue font-normal font-rubik mt-1">
           {content}
         </p>
       </div>
