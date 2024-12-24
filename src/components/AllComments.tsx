@@ -27,7 +27,7 @@ const AllComments = () => {
 
   return (
     <div className="flex flex-col mt-4 max-w-2xl mx-auto pb-32">
-      {data?.comments.map((items) => (
+      {data?.comments?.map((items) => (
         <div key={items.id}>
           <Comment
             content={items.content}
@@ -51,16 +51,14 @@ const AllComments = () => {
         {commentsData.comments
           .filter((filterIds) => filterIds.id > 2)
           .map((userComment) => (
-            <>
-              <UserComment
-                key={userComment.id}
-                content={userComment.content}
-                createdAt={userComment.createdAt}
-                username={userComment.user.username}
-                image={userComment.user.image.webp}
-                id={userComment.id}
-              />
-            </>
+            <UserComment
+              key={userComment.id}
+              content={userComment.content}
+              createdAt={userComment.createdAt}
+              username={userComment.user.username}
+              image={userComment.user.image.webp}
+              id={userComment.id}
+            />
           ))}
       </div>
 

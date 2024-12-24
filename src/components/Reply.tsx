@@ -1,21 +1,15 @@
-import { AddCommentProps } from "@/types/types";
 import Image from "next/image";
 import { useState } from "react";
 import toast from "react-hot-toast";
-
-const AddComment = ({ addComment }: AddCommentProps) => {
+const Reply = () => {
   const [newComment, setNewComment] = useState("");
   const handleSubmit = () => {
-    if (newComment.trim()) {
-      addComment(newComment);
-      setNewComment("");
-    }
     if (newComment === "") {
       toast.error("Please enter a comment");
     }
   };
   return (
-    <div className="flex justify-between px-5 py-6 gap-x-4 bg-Neutral-White rounded-md max-w-2xl">
+    <div className="flex justify-between px-5 py-6 gap-x-4 mb-4 bg-Neutral-White rounded-md max-w-[600px] ml-auto font-rubik">
       <Image
         src="/images/avatars/image-juliusomo.webp"
         alt="userImage"
@@ -32,7 +26,7 @@ const AddComment = ({ addComment }: AddCommentProps) => {
       ></textarea>
       <button
         type="button"
-        className="bg-Primary-Moderateblue hover:bg-Primary-LightGrayishBlue rounded-lg text-Neutral-VeryLightGray px-4 py-2 self-start font-rubik"
+        className="bg-Primary-Moderateblue hover:bg-Primary-LightGrayishBlue rounded-lg text-Neutral-VeryLightGray px-4 py-2 self-start"
         onClick={handleSubmit}
       >
         SEND
@@ -41,4 +35,4 @@ const AddComment = ({ addComment }: AddCommentProps) => {
   );
 };
 
-export default AddComment;
+export default Reply;

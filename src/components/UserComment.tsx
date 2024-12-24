@@ -6,6 +6,7 @@ import Buttons from "./Buttons";
 import { UserCommentProps } from "@/types/types";
 import { useAtom } from "jotai";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const UserComment = ({
   content,
@@ -20,17 +21,22 @@ const UserComment = ({
 
   const handleEdit = () => {
     setEdit(true);
+    setNewComment(content);
   };
 
   const updated = () => {
-    const updatedComments = commentsData.comments.map((items) =>
-      items.id === id ? { ...items, content: newComment } : items
-    );
-    setCommentsData({
-      ...commentsData,
-      comments: updatedComments,
-    });
-    setEdit(false);
+    if (newComment === "") {
+      toast.error("Please enter a comment");
+    } else {
+      const updatedComments = commentsData.comments.map((items) =>
+        items.id === id ? { ...items, content: newComment } : items
+      );
+      setCommentsData({
+        ...commentsData,
+        comments: updatedComments,
+      });
+      setEdit(false);
+    }
   };
   return (
     <div className="flex px-5 py-7 mb-4 bg-Neutral-White rounded-md font-rubik">
