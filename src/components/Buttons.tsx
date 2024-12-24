@@ -4,9 +4,15 @@ import { useAtom } from "jotai";
 import DeleteDialog from "./Dialog";
 import { useState } from "react";
 
-const Buttons = ({ id }: { id: number }) => {
+const Buttons = ({
+  id,
+  handleEdit,
+}: {
+  id: number;
+  handleEdit: () => void;
+}) => {
   const [isOpen, setIsOpen] = useAtom(dialogAtom);
-  const [deleteId, setDeleteId] = useState(-1);
+  const [deleteId, setDeleteId] = useState<number | null>(null);
   const [commentsData, setCommentsData] = useAtom(dataAtom);
 
   const openDialog = (id: number) => {
@@ -14,11 +20,14 @@ const Buttons = ({ id }: { id: number }) => {
     setDeleteId(id);
   };
   const handleDelete = () => {
-    const updataComments = commentsData.comments.filter(
-      (items) => items.id !== deleteId
-    );
-    setCommentsData({ ...commentsData, comments: updataComments });
-    setIsOpen(false);
+    if (deleteId !== null) {
+      const deleteComments = commentsData.comments.filter(
+        (items) => items.id !== deleteId
+      );
+      setCommentsData({ ...commentsData, comments: deleteComments });
+      setIsOpen(false);
+      setDeleteId(null);
+    }
   };
 
   return (
@@ -36,7 +45,7 @@ const Buttons = ({ id }: { id: number }) => {
             Delete
           </span>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center" onClick={handleEdit}>
           <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M13.479 2.872 11.08.474a1.75 1.75 0 0 0-2.327-.06L.879 8.287a1.75 1.75 0 0 0-.5 1.06l-.375 3.648a.875.875 0 0 0 .875.954h.078l3.65-.333c.399-.04.773-.216 1.058-.499l7.875-7.875a1.68 1.68 0 0 0-.061-2.371Zm-2.975 2.923L8.159 3.449 9.865 1.7l2.389 2.39-1.75 1.706Z"
@@ -44,7 +53,7 @@ const Buttons = ({ id }: { id: number }) => {
               className="hover:fill-Primary-LightGrayishBlue"
             />
           </svg>
-          <span className="font-rubik pl-2 font-medium text-Primary-Moderateblue hover:text-Primary-LightGrayishBlue ">
+          <span className="font-rubik pl-2 font-medium text-Primary-Moderateblue hover:text-Primary-LightGrayishBlue">
             Edit
           </span>
         </div>
