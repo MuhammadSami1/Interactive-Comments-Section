@@ -21,7 +21,7 @@ type Reply = {
   user: User;
 };
 
-const Reply = ({ replyingTo }: { replyingTo: string | undefined }) => {
+const Reply = ({ replyingTo }: { replyingTo?: string | undefined }) => {
   const [newComment, setNewComment] = useState("");
   const [commentData, setCommentsData] = useAtom(dataAtom);
   const [send, setSend] = useState(false);
