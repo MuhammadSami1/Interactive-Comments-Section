@@ -68,10 +68,10 @@ Here are the available npm scripts:
 
 This project integrates several tools to maintain a high-quality codebase:
 
-Husky: Runs pre-commit hooks for linting and formatting.
-Prettier: Automatically formats code.
-ESLint: Ensures adherence to coding standards.
-Lint-Staged: Formats staged files before committing.
+- **Husky**: Runs pre-commit hooks for linting and formatting.
+- **Prettier**: Automatically formats code.
+- **ESLint**: Ensures adherence to coding standards.
+- **Lint-Staged**: Formats staged files before committing.
 
 ## 🌐 Live Demo
 
