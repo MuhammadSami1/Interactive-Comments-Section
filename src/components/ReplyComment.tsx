@@ -20,13 +20,13 @@ const ReplyComment = ({
 
   return (
     <>
-      <div className="mx-auto mb-4 ml-auto flex max-w-md justify-between rounded-md bg-Neutral-White px-5 py-7 font-rubik sm:mr-12 sm:max-w-lg md:mr-0 md:max-w-[600px]">
+      <div className="mx-auto mb-4 ml-auto flex max-w-xs justify-between rounded-md bg-Neutral-White px-2 py-7 font-rubik text-xs sm:mr-12 sm:max-w-lg sm:text-base md:mr-0 md:max-w-[600px]">
         <ScopeProvider atoms={[count]}>
           <Counter />
         </ScopeProvider>
 
-        <div className="pl-5">
-          <div className="flex items-center gap-x-4">
+        <div className="pl-2 sm:pl-5">
+          <div className="flex items-center gap-x-2 sm:gap-x-4">
             <Image
               src={image}
               alt="image1"

@@ -96,7 +96,7 @@ const Reply = ({ replyingTo }: { replyingTo?: string | undefined }) => {
           id={newReplyData.id}
         />
       ) : (
-        <div className="mx-auto mb-4 flex max-w-md justify-between gap-x-4 rounded-md bg-Neutral-White px-5 py-6 font-rubik sm:ml-auto sm:mr-12 sm:max-w-lg md:mr-0 md:max-w-[600px]">
+        <div className="mx-auto mb-4 flex max-w-xs justify-between gap-x-4 rounded-md bg-Neutral-White px-2 py-6 font-rubik sm:ml-auto sm:mr-12 sm:max-w-lg sm:px-5 md:mr-0 md:max-w-[600px]">
           <Image
             src="/images/avatars/image-juliusomo.webp"
             alt="userImage"
@@ -113,7 +113,7 @@ const Reply = ({ replyingTo }: { replyingTo?: string | undefined }) => {
           ></textarea>
           <button
             type="button"
-            className="self-start rounded-lg bg-Primary-Moderateblue px-4 py-2 text-Neutral-VeryLightGray hover:bg-Primary-LightGrayishBlue"
+            className="self-start rounded-lg bg-Primary-Moderateblue px-2 py-2 text-Neutral-VeryLightGray hover:bg-Primary-LightGrayishBlue sm:px-4"
             onClick={handleSubmit}
           >
             Reply

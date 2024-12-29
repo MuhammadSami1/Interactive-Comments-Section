@@ -18,7 +18,7 @@ const AddComment = ({ addComment }: AddCommentProps) => {
 
   return (
     <div className="max-w-2xl">
-      <div className="mx-auto flex max-w-md justify-between gap-x-4 rounded-md bg-Neutral-White px-5 py-6 sm:max-w-xl md:ml-auto md:max-w-2xl">
+      <div className="mx-auto flex max-w-xs justify-between gap-x-3 rounded-md bg-Neutral-White px-2 py-6 sm:max-w-xl sm:gap-x-4 sm:px-5 md:ml-auto md:max-w-2xl">
         <Image
           src="/images/avatars/image-juliusomo.webp"
           alt="userImage"
@@ -36,7 +36,7 @@ const AddComment = ({ addComment }: AddCommentProps) => {
 
         <button
           type="button"
-          className="self-start rounded-lg bg-Primary-Moderateblue px-4 py-2 font-rubik text-Neutral-VeryLightGray hover:bg-Primary-LightGrayishBlue"
+          className="self-start rounded-lg bg-Primary-Moderateblue px-2 py-1 font-rubik text-Neutral-VeryLightGray hover:bg-Primary-LightGrayishBlue sm:px-4 sm:py-2"
           onClick={handleSubmit}
         >
           SEND

@@ -39,13 +39,13 @@ const UserComment = ({
     }
   };
   return (
-    <div className="mx-auto mb-4 flex max-w-md rounded-md bg-Neutral-White px-5 py-7 font-rubik sm:ml-auto sm:max-w-xl md:max-w-2xl">
+    <div className="mx-auto mb-4 flex max-w-xs rounded-md bg-Neutral-White px-2 py-7 font-rubik text-xs sm:ml-auto sm:max-w-xl sm:px-5 sm:text-base md:max-w-2xl">
       <ScopeProvider atoms={[count]}>
         <Counter />
       </ScopeProvider>
 
-      <div className="w-full pl-5">
-        <div className="flex items-center gap-x-2 sm:gap-x-3">
+      <div className="w-full pl-2 sm:pl-5">
+        <div className="flex items-center gap-x-1 sm:gap-x-3">
           <Image
             src={image}
             alt="image1"
@@ -57,7 +57,7 @@ const UserComment = ({
           <div className="font-semibold text-Neutral-DarkBlue text-fontSize-base">
             {username}
           </div>
-          <div className="rounded-md bg-Primary-Moderateblue px-2 text-Neutral-VeryLightGray">
+          <div className="rounded-md bg-Primary-Moderateblue px-1 text-Neutral-VeryLightGray sm:px-2">
             You
           </div>
           <span className="text-Neutral-GrayishBlue">{createdAt}</span>

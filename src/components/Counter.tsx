@@ -13,7 +13,7 @@ const Counter = () => {
   };
 
   return (
-    <div className="flex h-24 flex-col items-center gap-y-3 rounded-lg bg-Neutral-LightGray bg-opacity-50 px-3 pt-3">
+    <div className="flex h-24 flex-col items-center gap-y-3 rounded-lg bg-Neutral-LightGray bg-opacity-50 px-2 pt-3 sm:px-3">
       <svg
         width="11"
         height="11"

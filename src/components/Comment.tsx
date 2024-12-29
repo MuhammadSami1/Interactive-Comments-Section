@@ -13,13 +13,13 @@ const Comment = ({ content, createdAt, username, image }: CommentProps) => {
   };
   return (
     <>
-      <div className="mx-auto mb-4 flex max-w-md justify-between rounded-md bg-Neutral-White px-5 py-7 font-rubik sm:ml-auto sm:max-w-xl sm:px-5 md:max-w-2xl">
+      <div className="mx-auto mb-4 flex max-w-xs justify-between rounded-md bg-Neutral-White px-2 py-7 font-rubik text-xs sm:ml-auto sm:max-w-xl sm:px-5 sm:text-base md:max-w-2xl">
         <ScopeProvider atoms={[count]}>
           <Counter />
         </ScopeProvider>
 
-        <div className="pl-5">
-          <div className="flex items-center gap-x-4">
+        <div className="pl-2 sm:pl-5">
+          <div className="flex items-center gap-x-2 sm:gap-x-4">
             <Image
               src={image}
               alt="image1"
@@ -31,9 +31,7 @@ const Comment = ({ content, createdAt, username, image }: CommentProps) => {
             <div className="font-semibold text-Neutral-DarkBlue text-fontSize-base">
               {username}
             </div>
-            <span className="text-xs text-Neutral-GrayishBlue sm:text-lg">
-              {createdAt}
-            </span>
+            <span className="text-Neutral-GrayishBlue">{createdAt}</span>
 
             <div className="ml-auto flex items-center" onClick={handleReply}>
               <svg width="14" height="13" xmlns="http://www.w3.org/2000/svg">

@@ -56,14 +56,14 @@ const ReplyComments = ({
     setEdit(false);
   };
   return (
-    <div className="mx-auto max-w-md sm:ml-auto sm:mr-12 sm:max-w-lg md:mr-0 md:max-w-[600px]">
-      <div className="mb-4 flex rounded-md bg-Neutral-White px-5 py-7 font-rubik">
+    <div className="mx-auto max-w-xs sm:ml-auto sm:mr-12 sm:max-w-lg md:mr-0 md:max-w-[600px]">
+      <div className="mb-4 flex rounded-md bg-Neutral-White px-2 py-7 font-rubik text-xs sm:px-5 md:text-base">
         <ScopeProvider atoms={[count]}>
           <Counter />
         </ScopeProvider>
 
-        <div className="w-full pl-5">
-          <div className="flex items-center gap-x-2 sm:gap-x-3">
+        <div className="w-full pl-2 sm:pl-5">
+          <div className="flex items-center gap-x-1 sm:gap-x-3">
             <Image
               src={image}
               alt="image1"
@@ -75,7 +75,7 @@ const ReplyComments = ({
             <div className="font-semibold text-Neutral-DarkBlue text-fontSize-base">
               {username}
             </div>
-            <div className="rounded-md bg-Primary-Moderateblue px-2 text-Neutral-VeryLightGray">
+            <div className="rounded-md bg-Primary-Moderateblue px-1 text-Neutral-VeryLightGray sm:px-2">
               You
             </div>
             <span className="text-Neutral-GrayishBlue">{createdAt}</span>

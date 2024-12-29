@@ -32,7 +32,7 @@ const Buttons = ({
 
   return (
     <>
-      <div className="ml-auto flex gap-x-3">
+      <div className="ml-auto flex gap-x-1 sm:gap-x-3">
         <div className="flex items-center" onClick={() => openDialog(id)}>
           <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -41,7 +41,7 @@ const Buttons = ({
               className="hover:fill-Primary-PaleRed"
             />
           </svg>
-          <span className="pl-2 font-rubik font-medium text-Primary-SoftRed hover:text-Primary-PaleRed">
+          <span className="pl-1 font-rubik font-medium text-Primary-SoftRed hover:text-Primary-PaleRed sm:pl-2">
             Delete
           </span>
         </div>
@@ -53,7 +53,7 @@ const Buttons = ({
               className="hover:fill-Primary-LightGrayishBlue"
             />
           </svg>
-          <span className="pl-2 font-rubik font-medium text-Primary-Moderateblue hover:text-Primary-LightGrayishBlue">
+          <span className="pl-1 font-rubik font-medium text-Primary-Moderateblue hover:text-Primary-LightGrayishBlue sm:pl-2">
             Edit
           </span>
         </div>
