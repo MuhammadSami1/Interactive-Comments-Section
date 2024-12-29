@@ -2,7 +2,7 @@ import { CommentsData } from "@/types/addCommentTypes";
 
 const useAddComment = (
   commentsData: CommentsData,
-  setCommentsData: React.Dispatch<React.SetStateAction<CommentsData>>
+  setCommentsData: React.Dispatch<React.SetStateAction<CommentsData>>,
 ) => {
   const addComment = (newCommentContent: string) => {
     const allIds = commentsData.comments.flatMap((comment) => [
@@ -11,12 +11,22 @@ const useAddComment = (
     ]);
     const newId = Math.max(...allIds) + 1;
 
-    const date: string = new Date().toISOString();
+    // const date: string = new Date().getTime.toString();
+    function timeNow(date = new Date()) {
+      return (
+        (date.getHours() < 10 ? "0" : "") +
+        date.getHours() +
+        ":" +
+        (date.getMinutes() < 10 ? "0" : "") +
+        date.getMinutes()
+      );
+    }
+    const time = timeNow();
 
     const newComment = {
       id: newId,
       content: newCommentContent,
-      createdAt: date,
+      createdAt: time,
       score: 0,
       user: {
         image: commentsData.currentUser.image,
@@ -32,6 +42,7 @@ const useAddComment = (
 
     setCommentsData(updatedComments);
   };
+
   return addComment;
 };
 

@@ -20,7 +20,7 @@ const ReplyComment = ({
 
   return (
     <>
-      <div className="mb-4 ml-auto flex max-w-[600px] justify-between rounded-md bg-Neutral-White px-5 py-7 font-rubik">
+      <div className="mb-4 ml-auto flex max-w-lg justify-between rounded-md bg-Neutral-White px-5 py-7 font-rubik md:max-w-[600px]">
         <ScopeProvider atoms={[count]}>
           <Counter />
         </ScopeProvider>
@@ -54,11 +54,14 @@ const ReplyComment = ({
             </div>
           </div>
           <p className="mt-1 font-rubik font-normal text-Neutral-GrayishBlue">
-            {`@${replyingTo} ${content}`}
+            <span className="font-rubik font-semibold text-Primary-Moderateblue">
+              {replyingTo}
+            </span>{" "}
+            {content}
           </p>
         </div>
       </div>
-      {reply && <Reply />}
+      {reply && <Reply replyingTo={replyingTo} />}
     </>
   );
 };

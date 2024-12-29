@@ -26,7 +26,7 @@ const AllComments = () => {
   }, [commentsData]);
 
   return (
-    <div className="flex flex-col mt-4 max-w-2xl mx-auto pb-32">
+    <div className="mx-auto mt-4 flex max-w-2xl flex-col pb-32">
       {data?.comments?.map((items) => (
         <div key={items.id}>
           <Comment
@@ -62,7 +62,7 @@ const AllComments = () => {
           ))}
       </div>
 
-      <div className="fixed bottom-0 w-full z-10">
+      <div className="fixed bottom-0 z-10 w-full">
         <AddComment addComment={addComment} />
       </div>
     </div>

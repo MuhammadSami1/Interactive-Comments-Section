@@ -29,7 +29,7 @@ const UserComment = ({
       toast.error("Please enter a comment");
     } else {
       const updatedComments = commentsData.comments.map((items) =>
-        items.id === id ? { ...items, content: newComment } : items
+        items.id === id ? { ...items, content: newComment } : items,
       );
       setCommentsData({
         ...commentsData,
@@ -39,12 +39,12 @@ const UserComment = ({
     }
   };
   return (
-    <div className="flex px-5 py-7 mb-4 bg-Neutral-White rounded-md font-rubik">
+    <div className="mb-4 ml-auto flex max-w-xl rounded-md bg-Neutral-White px-5 py-7 font-rubik md:max-w-2xl">
       <ScopeProvider atoms={[count]}>
         <Counter />
       </ScopeProvider>
 
-      <div className="pl-5 w-full">
+      <div className="w-full pl-5">
         <div className="flex items-center gap-x-3">
           <Image
             src={image}
@@ -57,7 +57,7 @@ const UserComment = ({
           <div className="font-semibold text-Neutral-DarkBlue text-fontSize-base">
             {username}
           </div>
-          <div className="bg-Primary-Moderateblue text-Neutral-VeryLightGray px-2  rounded-md">
+          <div className="rounded-md bg-Primary-Moderateblue px-2 text-Neutral-VeryLightGray">
             You
           </div>
           <span className="text-Neutral-GrayishBlue">{createdAt}</span>
@@ -70,19 +70,19 @@ const UserComment = ({
             <textarea
               placeholder="Edit comment"
               rows={3}
-              className="w-full border border-Neutral-GrayishBlue rounded-md p-2 mt-2"
+              className="mt-2 w-full rounded-md border border-Neutral-GrayishBlue p-2"
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
             ></textarea>
             <button
-              className="bg-Primary-Moderateblue hover:bg-Primary-LightGrayishBlue rounded-lg text-Neutral-VeryLightGray px-4 py-2 font-rubik flex ml-auto"
+              className="ml-auto flex rounded-lg bg-Primary-Moderateblue px-4 py-2 font-rubik text-Neutral-VeryLightGray hover:bg-Primary-LightGrayishBlue"
               onClick={updated}
             >
               UPDATE
             </button>
           </>
         ) : (
-          <p className="text-Neutral-GrayishBlue font-normal font-rubik mt-1 ">
+          <p className="mt-1 font-rubik font-normal text-Neutral-GrayishBlue">
             {content}
           </p>
         )}

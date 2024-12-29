@@ -1,6 +1,7 @@
 export type CommentProps = {
   content?: string;
   createdAt?: string;
+  replyingTo?: string | undefined;
   username?: string;
   image: string;
 };

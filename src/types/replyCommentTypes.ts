@@ -1,17 +1,18 @@
 type User = {
-  username: string;
   image: {
     png: string;
     webp: string;
   };
+  username: string;
 };
 
-type Reply = {
+type ReplyTypes = {
   id: number;
   content: string;
   createdAt: string;
   replyingTo: string;
   user: User;
+  replies: ReplyTypes[];
 };
 
 type Comment = {
@@ -20,11 +21,10 @@ type Comment = {
   createdAt: string;
   score: number;
   user: User;
-
-  replies: Reply[];
+  replies: ReplyTypes[];
 };
 
-export type CommentsData = {
+export type ReplyCommentsTypes = {
   currentUser: User;
   comments: Comment[];
 };
