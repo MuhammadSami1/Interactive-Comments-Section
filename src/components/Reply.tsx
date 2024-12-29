@@ -96,7 +96,7 @@ const Reply = ({ replyingTo }: { replyingTo?: string | undefined }) => {
           id={newReplyData.id}
         />
       ) : (
-        <div className="mb-4 ml-auto flex max-w-xl justify-between gap-x-4 rounded-md bg-Neutral-White px-5 py-6 font-rubik md:max-w-[600px]">
+        <div className="mx-auto mb-4 flex max-w-md justify-between gap-x-4 rounded-md bg-Neutral-White px-5 py-6 font-rubik sm:ml-auto sm:mr-12 sm:max-w-lg md:mr-0 md:max-w-[600px]">
           <Image
             src="/images/avatars/image-juliusomo.webp"
             alt="userImage"

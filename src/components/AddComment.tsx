@@ -18,7 +18,7 @@ const AddComment = ({ addComment }: AddCommentProps) => {
 
   return (
     <div className="max-w-2xl">
-      <div className="ml-auto flex max-w-xl justify-between gap-x-4 rounded-md bg-Neutral-White px-5 py-6 md:max-w-2xl">
+      <div className="mx-auto flex max-w-md justify-between gap-x-4 rounded-md bg-Neutral-White px-5 py-6 sm:max-w-xl md:ml-auto md:max-w-2xl">
         <Image
           src="/images/avatars/image-juliusomo.webp"
           alt="userImage"

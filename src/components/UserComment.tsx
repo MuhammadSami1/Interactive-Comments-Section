@@ -39,13 +39,13 @@ const UserComment = ({
     }
   };
   return (
-    <div className="mb-4 ml-auto flex max-w-xl rounded-md bg-Neutral-White px-5 py-7 font-rubik md:max-w-2xl">
+    <div className="mx-auto mb-4 flex max-w-md rounded-md bg-Neutral-White px-5 py-7 font-rubik sm:ml-auto sm:max-w-xl md:max-w-2xl">
       <ScopeProvider atoms={[count]}>
         <Counter />
       </ScopeProvider>
 
       <div className="w-full pl-5">
-        <div className="flex items-center gap-x-3">
+        <div className="flex items-center gap-x-2 sm:gap-x-3">
           <Image
             src={image}
             alt="image1"

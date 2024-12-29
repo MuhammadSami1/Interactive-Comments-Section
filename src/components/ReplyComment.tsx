@@ -20,7 +20,7 @@ const ReplyComment = ({
 
   return (
     <>
-      <div className="mb-4 ml-auto flex max-w-lg justify-between rounded-md bg-Neutral-White px-5 py-7 font-rubik md:max-w-[600px]">
+      <div className="mx-auto mb-4 ml-auto flex max-w-md justify-between rounded-md bg-Neutral-White px-5 py-7 font-rubik sm:mr-12 sm:max-w-lg md:mr-0 md:max-w-[600px]">
         <ScopeProvider atoms={[count]}>
           <Counter />
         </ScopeProvider>
@@ -38,7 +38,9 @@ const ReplyComment = ({
             <div className="font-semibold text-Neutral-DarkBlue text-fontSize-base">
               {username}
             </div>
-            <span className="text-Neutral-GrayishBlue">{createdAt}</span>
+            <span className="text-sm text-Neutral-GrayishBlue sm:text-lg">
+              {createdAt}
+            </span>
 
             <div className="ml-auto flex items-center" onClick={handleReply}>
               <svg width="14" height="13" xmlns="http://www.w3.org/2000/svg">

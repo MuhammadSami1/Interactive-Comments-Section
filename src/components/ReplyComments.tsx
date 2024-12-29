@@ -56,14 +56,14 @@ const ReplyComments = ({
     setEdit(false);
   };
   return (
-    <div className="ml-auto max-w-lg md:max-w-[600px]">
+    <div className="mx-auto max-w-md sm:ml-auto sm:mr-12 sm:max-w-lg md:mr-0 md:max-w-[600px]">
       <div className="mb-4 flex rounded-md bg-Neutral-White px-5 py-7 font-rubik">
         <ScopeProvider atoms={[count]}>
           <Counter />
         </ScopeProvider>
 
         <div className="w-full pl-5">
-          <div className="flex items-center gap-x-3">
+          <div className="flex items-center gap-x-2 sm:gap-x-3">
             <Image
               src={image}
               alt="image1"
