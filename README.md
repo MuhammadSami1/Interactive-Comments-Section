@@ -46,3 +46,40 @@ Ensure you have the following installed:
    cd commentsection
    ```
 2. Install dependencies:
+   ```bash
+   pnpm i
+   ```
+3. Start the development server:
+   ```bash
+   pnpm run dev
+   ```
+
+## 📦 Scripts
+
+Here are the available npm scripts:
+
+- **pnpm run dev**: Starts the development server with Turbopack.
+- **pnpm run build**: Builds the application for production.
+- **pnpm run start**: Starts the production server.
+- **pnpm run lint**: Lints the codebase using ESLint.
+- **pnpm run prepare**: Initializes Husky for Git hooks.
+
+## 🧹 Code Quality Tools
+
+This project integrates several tools to maintain a high-quality codebase:
+
+Husky: Runs pre-commit hooks for linting and formatting.
+Prettier: Automatically formats code.
+ESLint: Ensures adherence to coding standards.
+Lint-Staged: Formats staged files before committing.
+
+## 🌐 Live Demo
+
+Check out the live version of the project here:
+https://interactive-comments-section-puce.vercel.app/
+
+## ✨ Future Improvements
+
+Fix issues with editing and deleting replies in the nested reply structure.
+Implement unit tests to ensure robustness.
+Add backend integration for persistent data storage.
