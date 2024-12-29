@@ -80,6 +80,6 @@ https://interactive-comments-section-puce.vercel.app/
 
 ## ✨ Future Improvements
 
-Fix issues with editing and deleting replies in the nested reply structure.
-Implement unit tests to ensure robustness.
-Add backend integration for persistent data storage.
+- **Fix issues with editing and deleting replies in the nested reply structure.**
+- **Implement unit tests to ensure robustness.**
+- **Add backend integration for persistent data storage.**
