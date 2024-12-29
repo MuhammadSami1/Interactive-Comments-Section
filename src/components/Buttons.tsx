@@ -22,7 +22,7 @@ const Buttons = ({
   const handleDelete = () => {
     if (deleteId !== null) {
       const deleteComments = commentsData.comments.filter(
-        (items) => items.id !== deleteId
+        (items) => items.id !== deleteId,
       );
       setCommentsData({ ...commentsData, comments: deleteComments });
       setIsOpen(false);
@@ -32,7 +32,7 @@ const Buttons = ({
 
   return (
     <>
-      <div className="flex gap-x-3 ml-auto">
+      <div className="ml-auto flex gap-x-3">
         <div className="flex items-center" onClick={() => openDialog(id)}>
           <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -41,7 +41,7 @@ const Buttons = ({
               className="hover:fill-Primary-PaleRed"
             />
           </svg>
-          <span className="font-rubik pl-2 font-medium hover:text-Primary-PaleRed text-Primary-SoftRed">
+          <span className="pl-2 font-rubik font-medium text-Primary-SoftRed hover:text-Primary-PaleRed">
             Delete
           </span>
         </div>
@@ -53,7 +53,7 @@ const Buttons = ({
               className="hover:fill-Primary-LightGrayishBlue"
             />
           </svg>
-          <span className="font-rubik pl-2 font-medium text-Primary-Moderateblue hover:text-Primary-LightGrayishBlue">
+          <span className="pl-2 font-rubik font-medium text-Primary-Moderateblue hover:text-Primary-LightGrayishBlue">
             Edit
           </span>
         </div>

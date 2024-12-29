@@ -77,7 +77,6 @@ const Reply = ({ replyingTo }: { replyingTo?: string | undefined }) => {
     setCommentsData({ ...commentData, comments: updatedComments });
     setNewReplyData(newReply);
     setSend(true);
-    console.log(commentData);
   };
 
   useEffect(() => {
